@@ -1,8 +1,8 @@
 class Solution(object):
     def totalFruit(self, fruits):
+        maxi = 0
         seen = {}
         left = 0
-        maxi = 0
 
         for right in range(len(fruits)):
             seen[fruits[right]] = seen.get(fruits[right], 0) + 1
