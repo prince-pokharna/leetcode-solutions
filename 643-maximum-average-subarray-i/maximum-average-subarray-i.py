@@ -1,10 +1,17 @@
 class Solution(object):
-    def findMaxAverage(self, nums, k):
+    def findMaxAverage(self, nums, k): 
        current_sum = sum(nums[:k])
-       max_sum = current_sum
+       maxi = current_sum
+       left = 0
 
-       for i in range(k , len(nums)):
-            current_sum += nums[i] - nums[i-k]
-            max_sum = max(current_sum, max_sum)
 
-       return max_sum/float(k)
+       for right in range(k, len(nums)):
+            current_sum += nums[right] - nums[left]
+            maxi = max(maxi, current_sum)
+            left +=1
+
+       return maxi/float(k) 
+
+
+
+         
